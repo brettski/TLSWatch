@@ -1,0 +1,16 @@
+{
+  "name": "tlswatch",
+  "version": "0.1.0",
+  "description": "A service to keep an eye on your certificates",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Brett Slaski",
+  "license": "ISC",
+  "engines": {
+    "node": ">=5.2.0"
+  },
+  "dependencies": {}
+}
