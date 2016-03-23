@@ -20,7 +20,9 @@ for (var item in san) {
 */
 
 const certf = require('./cert');
-certf.getCert('brettsk.com', function (err, cert) {
+certf.getCert('surveysage.com', function (err, cert) {
+// look for error types, if (err & err.type == 'no cert, invalid domain')
+// invalid domain seems to throw an exception
   if (err) throw err;
 
   console.log(cert);

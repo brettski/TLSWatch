@@ -1,10 +1,13 @@
 'use strict';
 /*
-  Functions used to check certificate status, etc.
+  Functions used to get and check certificate status, etc.
 */
 
 const https = require('https');
 
+//
+// Retrieve certificate from site
+//
 function getCert(domain, callback) {
   var options = {
     host: domain,

@@ -1,0 +1,28 @@
+/*
+ *
+ *
+ */
+
+// user document
+_id: 0,
+name: {
+  first: "firstname",
+  last: "lastname"
+},
+password: "#FVo3f8b31klSHT2JzrT8O",
+salt: "EmIU3zQpiYE1",
+email: "blah@example.com",
+twitter: "twitter name"
+
+// certificate document
+_id: 0,
+user: "the user tracking this cert",
+friendlyName: "friendly name for cert",
+subject: "subject object",
+issuer: "(maybe) issuer object",
+subjectalname: "name list if present",
+valid_from: "date time",
+valid_to: "date time",
+fingerprint: "blah code",
+serialNunber: "sha hash serial number",
+timeLastChecked: "checked date time"

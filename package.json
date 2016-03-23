@@ -7,10 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "homepage": "https://github.com/brettski/TLSWatch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brettski/TLSWatch.git"
+  },
   "author": "Brett Slaski",
   "license": "ISC",
   "engines": {
-    "node": ">=5.2.0"
+    "node": "^5.2.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mongodb": "^2.1.10"
+  }
 }
