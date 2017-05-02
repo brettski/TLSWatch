@@ -4,6 +4,7 @@
 */
 
 const https = require('https');
+//const https = require('follow-redirects').https;
 
 //
 // Retrieve certificate from site
@@ -21,6 +22,8 @@ function getCert(domain, callback) {
   var req = https.request(options, function(res) {
     console.log('statusCode: ', res.statusCode);
     //console.log('headers: ', res.headers);
+    console.log('response:\n', res.connection.getPeerCertificate());
+    //console.log('response url', res.responseUrl);
     res.on('data', function(d) {
       cert = res.connection.getPeerCertificate();
       return callback(err, cert);

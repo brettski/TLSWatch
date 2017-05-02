@@ -20,12 +20,12 @@ for (var item in san) {
 */
 
 const certf = require('./cert');
-certf.getCert('surveysage.com', function (err, cert) {
+certf.getCert('cebclearforce.com', function (err, cert) {
 // look for error types, if (err & err.type == 'no cert, invalid domain')
 // invalid domain seems to throw an exception
   if (err) throw err;
 
-  console.log(cert);
+  console.log('cert:\n%s', cert);
 });
 //test()
 return;
@@ -42,18 +42,19 @@ function test() {
   var cert;
   var req = https.request(options, function(res) {
     console.log('statusCode: ', res.statusCode);
-    console.log('headers: ', res.headers);
+    //console.log('headers: ', res.headers);
+    console.log('response: ', res);
     res.on('data', function(d) {
       console.log(res.connection.getPeerCertificate());
+      console.log('response url: ', res.responseUrl);
     });
     //cert = res.connection.getPeerCertificate();
     // Need to do stuff with cert at this point
     //console.log('cert' + cert);
     //req.end();
   });
+
   console.log(cert);
   req.end();
   console.log(cert);
-
-
 }
