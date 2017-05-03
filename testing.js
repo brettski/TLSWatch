@@ -20,12 +20,16 @@ for (var item in san) {
 */
 
 const certf = require('./cert');
-certf.getCert('cebclearforce.com', function (err, cert) {
-// look for error types, if (err & err.type == 'no cert, invalid domain')
-// invalid domain seems to throw an exception
-  if (err) throw err;
+certf.getCert('tlswatch.com', function (err, cert) {
+  // look for error types, if (err & err.type == 'no cert, invalid domain')
+  // invalid domain seems to throw an exception
+  if (err) {
+    console.error('Error retrieving certificate:\n', err);
+    return;
+  }
 
-  console.log('cert:\n%s', cert);
+  const jsonCert = JSON.stringify(cert);
+  console.log('cert:\n', jsonCert.subject);
 });
 //test()
 return;
