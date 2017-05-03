@@ -10,7 +10,7 @@ const https = require('https');
 // Retrieve certificate from site
 //
 function getCert(domain, callback) {
-  var options = {
+  const options = {
     host: domain,
     port: 443,
     path: '/',
@@ -18,21 +18,25 @@ function getCert(domain, callback) {
     rejectUnauthorized: false
   };
 
-  var err, cert;
-  var req = https.request(options, function(res) {
+  var err, cert, statusCode;
+  const req = https.request(options, function(res) {
     console.log('statusCode: ', res.statusCode);
-    //console.log('headers: ', res.headers);
-    console.log('response:\n', res.connection.getPeerCertificate());
-    //console.log('response url', res.responseUrl);
-    res.on('data', function(d) {
-      cert = res.connection.getPeerCertificate();
+    statusCode = res.statusCode;
+    cert = res.connection.getPeerCertificate();
+
+    if (statusCode >= 200 && statusCode < 500) {
       return callback(err, cert);
-    });
+    }
+
     res.on('error', function(err) {
-      console.error(err);
       return callback(err);
     });
   });
+
+  req.on('error', (e) => {
+    return callback(e);
+  });
+
   req.end();
 }
 
