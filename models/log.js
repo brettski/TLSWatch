@@ -7,7 +7,7 @@ const logSchema = new Schema({
   createdOn: { type: Date, default: Date.now },
   type: String,
   data: String,
-  cert: Schema.Types.Mixed
+  cert: Object
 });
 
 mongoose.model('log', logSchema);

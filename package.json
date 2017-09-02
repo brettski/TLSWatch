@@ -16,9 +16,12 @@
   "author": "Brett Slaski",
   "license": "ISC",
   "engines": {
-    "node": "^8.4.0"
+    "node": "^8.4.0",
+    "npm": "^5.0.3"
   },
   "dependencies": {
-    "mongoose": "^4.11.9"
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9",
+    "passport": "^0.4.0"
   }
 }
