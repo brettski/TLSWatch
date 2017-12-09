@@ -1,0 +1,33 @@
+{
+  "name": "tlswatch-server",
+  "version": "0.0.0",
+  "description": "Server component to TLS Watch",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brettski/TLSWatch.git"
+  },
+  "keywords": [
+    "certificate",
+    "SSL",
+    "TLS",
+    "alert",
+    "notification"
+  ],
+  "author": "Brett Slaski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brettski/TLSWatch/issues"
+  },
+  "homepage": "https://github.com/brettski/TLSWatch#readme",
+  "engines": {
+    "node": "^8.4.0",
+    "npm" : "^5.0.3"
+  },
+  "dependencies": {
+    "hapi": "^17.1.1"
+  }
+}
