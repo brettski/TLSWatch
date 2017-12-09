@@ -72,33 +72,3 @@ function mongo(cert) {
     });
   });
 }
-
-
-
-function test() {
-  var https = require('https');
-  var options = {
-    host: 'brettski.com',
-    port: 443,
-    method:'GET',
-    rejectUnauthorized: false
-  };
-  var cert;
-  var req = https.request(options, function(res) {
-    console.log('statusCode: ', res.statusCode);
-    //console.log('headers: ', res.headers);
-    console.log('response: ', res);
-    res.on('data', function(d) {
-      console.log(res.connection.getPeerCertificate());
-      console.log('response url: ', res.responseUrl);
-    });
-    //cert = res.connection.getPeerCertificate();
-    // Need to do stuff with cert at this point
-    //console.log('cert' + cert);
-    //req.end();
-  });
-
-  console.log(cert);
-  req.end();
-  console.log(cert);
-}
