@@ -37,3 +37,15 @@ subject: "mail subject",
 body: "mail body"
 user: "reference back to user",
 isSent: "boolean"
+
+## references
+HTTP req Promise: https://www.tomas-dvorak.cz/posts/nodejs-request-without-dependencies/
+JWT: https://www.codementor.io/olatundegaruba/5-steps-to-authenticating-node-js-with-jwt-7ahb5dmyr
+JWT: https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens
+Mongoose, reference another Schema:
+https://stackoverflow.com/questions/18001478/referencing-another-schema-in-mongoose
+
+
+
+
+//
