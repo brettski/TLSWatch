@@ -2,8 +2,9 @@
 
 module.exports = () => {
   return [
- 
-   { path: '/{param*}', method: 'GET', handler: {
+
+   // directory path for web pages (requires inert)
+   { path: '/', method: 'GET', handler: {
         directory: {
           path: 'public',
           index: true
