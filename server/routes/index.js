@@ -1,16 +1,18 @@
 'use strict';
 
-module.exports = () => {
-  return [
+module.exports = [
+
 
    // directory path for web pages (requires inert)
-   { path: '/', method: 'GET', handler: {
+   {
+     path: '/{param*}',
+     method: 'GET',
+     handler: {
         directory: {
           path: 'public',
           index: true
         }
       }
-    }
+   }
 
-  ]
-};
+]

@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const Inert = require('inert');
+const Routes = require('./routes');
 
 const server = new Hapi.Server();
 
@@ -10,19 +11,8 @@ server.connection({
 });
 
 server.register(Inert);
-//server.route(require('./routes'));
-server.route(
-  {
-    path: '/{param*}',
-    method: 'GET',
-    handler: {
-       directory: {
-         path: 'public',
-         index: true
-       }
-     }
-   }
-);
+server.route(require('./routes'));
+//server.route(Routes);
 
 
 
