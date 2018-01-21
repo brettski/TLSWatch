@@ -11,15 +11,15 @@ server.connection({
 });
 
 server.register(Inert);
-server.route(require('./routes'));
-//server.route(Routes);
+server.route(Routes);
 
 
 
 server.start( (err) => {
   if (err) {
+    console.log(`Error starting server`);
     throw err;
   }
 
-  console.log('\nServer running at:', server.info.uri);
+  console.log(`\nServer running at: ${server.info.uri}`);
 });
