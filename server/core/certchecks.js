@@ -1,8 +1,8 @@
 'use strict'
 
-const isDatesValid = (valid_from, valid_to) => {
+const isDatesValid = (cert) => {
   const now = Date.now();
-  return valid_from <= now && valid_to > now;
+  return Date.parse(cert.valid_from) <= now && Date.parse(cert.valid_to) > now;
 }
 
 const isFingerprintMatch = (cert, fingerprint) => {
