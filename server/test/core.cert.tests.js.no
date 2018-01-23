@@ -1,0 +1,18 @@
+'use strict'
+
+const expect = require('chai').expect; 
+const getCertificate = require('../core/core.cert.js').getCertificate; 
+
+describe('Retrieve tls certificate', function() {
+  it('getCertificate(uri), Retrieve certificate from provided url match CN = www.google.com', function() {
+    getCertificate('www.google.com').then(
+      (thecert) => {
+        expect(thecert.subject.CN).to.equal('www.google.com');
+      },
+      (err) => {
+        expect(err).to.be.undefined;
+      }
+    )
+  });
+  
+})
