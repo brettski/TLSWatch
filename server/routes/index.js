@@ -18,6 +18,11 @@ module.exports = [
     path: '/api/tlstest',
     method: 'GET',
     handler: require('./tlstest')
+  },
+  {
+    path: '/api/domaincert/{domain*}',
+    method: 'get',
+    handler: require('./domaincert')
   }
 
 ]
