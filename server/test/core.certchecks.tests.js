@@ -45,8 +45,12 @@ describe("CertChecks", function() {
     expect(certchecks.isFingerprintMatch(badcert, certfp)).to.equal(false);
   })
 
-  it("isSerialNumMatch(cert, serialNum) should mat, return true", function() {
+  it("isSerialNumMatch(cert, serialNum) should match, return true", function() {
     expect(certchecks.isSerialNumMatch(acert, certsn)).to.equal(true);
   })
 
+  it("isSerialNumMatch(cert, serialNum) should not match, return fakse", function() {
+    expect(certchecks.isSerialNumMatch(badcert, certsn)).to.equal(false);
+  })
+  
 });
